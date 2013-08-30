@@ -57,10 +57,10 @@
 	<?php
 		foreach ($names as $name) {
 	?>
-		<p><?= $name['name']; ?></p>
+		<p><?= $name['name']; ?> - <a href="delete_name.php?id=<?= $name['id']; ?>&num_results=<?= $num_results ?>&page=<?= $page ?>">Delete</a></p>
 	<?php
 		}
-		
+
 	// pagination menu
 		if ($pages >= 1 && $page <= $pages) {
 			for ($x = 1; $x <= $pages; $x++) {

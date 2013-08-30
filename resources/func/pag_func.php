@@ -11,7 +11,7 @@ function add_name($name) {
 
 function get_names($start = 0, $per_page = null) {
 	$names = array();
-	$query = "SELECT `name` FROM `names` 
+	$query = "SELECT `id`, `name` FROM `names` 
 				LIMIT {$start}, {$per_page}";
 	$query = mysql_query($query) or die(mysql_error());
 	
@@ -29,4 +29,10 @@ function count_names() {
 	$result = mysql_result($count, 0);
 
 	return $result;
+}
+
+function delete_name($id) {
+	$id = (int)$id;
+	$query = "DELETE FROM `names` WHERE `id` = {$id}";
+	mysql_query($query);
 }
